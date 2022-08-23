@@ -8,13 +8,10 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp"
-        android:background="#348A2E"
+        android:layout_width="@dimen/zero"
+        android:layout_height="@dimen/zero"
+        android:layout_margin="@dimen/margin_All_Side"
+        android:background="@color/green_menu"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/upMenu"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,15 +21,15 @@
     <FrameLayout
         android:id="@+id/upMenu"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="#FDA000"
+        android:layout_height="@dimen/menu_Height"
+        android:background="@color/orange_menu"
         app:layout_constraintBottom_toBottomOf="parent" />
 
     <FrameLayout
         android:id="@+id/downMenu"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="#2361A3"
+        android:layout_height="@dimen/menu_Height"
+        android:background="@color/blue_menu"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
