@@ -2,5 +2,5 @@
 <resources>
     <dimen name="zero">0dp</dimen>
     <dimen name="margin_All_Side">25dp</dimen>
-    <dimen name="menu_Height">75dp</dimen>
+    <dimen name="menu_Height">100dp</dimen>
 </resources>
