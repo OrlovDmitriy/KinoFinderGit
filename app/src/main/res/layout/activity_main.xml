@@ -4,72 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/corner_background"
     tools:context=".MainActivity">
 
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="@dimen/zero"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_All_Side"
-        android:background="@drawable/corner_background"
-        android:orientation="vertical"
-        android:padding="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/upMenu"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/downMenu">
-
-        <Button
-            android:id="@+id/btn_menu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@android:color/white"
-            android:background="?selectableItemBackgroundBorderless"
-            android:text="@string/btn_menu" />
-
-        <Button
-            android:id="@+id/btn_favorites"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@android:color/white"
-            android:background="?selectableItemBackgroundBorderless"
-            android:text="@string/btn_favorites" />
-
-        <Button
-            android:id="@+id/btn_watch_later"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@android:color/white"
-            android:background="?selectableItemBackgroundBorderless"
-            android:text="@string/btn_watch_later" />
-
-        <Button
-            android:id="@+id/btn_selections"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@android:color/white"
-            android:background="?selectableItemBackgroundBorderless"
-            android:text="@string/btn_selections" />
-
-        <Button
-            android:id="@+id/btn_settings"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@android:color/white"
-            android:background="?selectableItemBackgroundBorderless"
-            android:text="@string/btn_settings" />
-    </LinearLayout>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/upMenu"
         android:layout_width="match_parent"
         android:layout_height="@dimen/menu_Height"
         android:layout_margin="10dp"
+        android:orientation="horizontal"
         app:cardCornerRadius="15dp"
         app:cardElevation="15dp"
-        app:layout_constraintTop_toTopOf="parent"
-        android:orientation="horizontal">
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/app_bar_layout">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -78,42 +27,42 @@
 
             <ImageView
                 android:id="@+id/imageView"
-                android:scaleType="centerCrop"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:scaleType="centerCrop"
                 app:srcCompat="@drawable/poster1" />
 
             <ImageView
                 android:id="@+id/imageView2"
-                android:scaleType="centerCrop"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:scaleType="centerCrop"
                 app:srcCompat="@drawable/poster2" />
 
             <ImageView
                 android:id="@+id/imageView3"
-                android:scaleType="centerCrop"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:scaleType="centerCrop"
                 app:srcCompat="@drawable/poster3" />
 
             <ImageView
                 android:id="@+id/imageView4"
-                android:scaleType="centerCrop"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:scaleType="centerCrop"
                 app:srcCompat="@drawable/poster4" />
 
             <ImageView
                 android:id="@+id/imageView5"
-                android:scaleType="centerCrop"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:scaleType="centerCrop"
                 app:srcCompat="@drawable/poster5" />
 
         </LinearLayout>
@@ -130,13 +79,32 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/upMenu" />
 
-    <FrameLayout
-        android:id="@+id/downMenu"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/menu_Height"
-        android:background="@color/orange_menu"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
 
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="@string/page_title"
+            app:navigationIcon="@drawable/ic_round_menu"
+            app:menu="@menu/settings"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary" />
 
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/orange_menu_navigate"
+        app:itemTextColor="@android:color/white"
+        app:itemIconTint="@android:color/white"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/navigation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
